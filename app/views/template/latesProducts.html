@@ -1,0 +1,12 @@
+<h3 class="widget-title">Latest Products</h3>
+<ul class="product_list_widget" >                        
+
+    <li ng-repeat="product in productsHistory">
+        <a href="single-product.html" title="Tablet Thin EliteBook  Revolve 810 G6">
+            <img class="wp-post-image" src="images/products/5.jpg" alt="">
+            <span class="product-title">{{product.name}}</span>
+        </a>
+        <span class="electro-price"><span class="amount">&#36;{{product.price}}</span></span>
+    </li>
+
+</ul><!-- .product_list_widget -->
