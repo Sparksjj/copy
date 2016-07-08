@@ -1,18 +1,32 @@
-var app = angular.module("zachet", ['ngRoute', "localStorageModule", "localizationModule"])
+var app = angular.module("zachet", ['ngRoute', "localStorageModule", "localizationModule" , "productModule"])
 
-  .config(function($routeProvider) {
+  .config(["$routeProvider", "$locationProvider",  function($routeProvider, $locationProvider) {
       $routeProvider
           .when('/', {
               templateUrl: 'views/test.html',
               controller: 'appCtrl',
           })
+          .when('/home', {
+              templateUrl: 'views/home.html',
+              controller: 'appCtrl',
+          })
+          .when('/products', {
+              templateUrl: 'views/products.html',
+              controller: 'appCtrl',
+          })
+          .when('/product', {
+              templateUrl: 'views/product.html',
+              controller: 'productController',
+
+          })
           .otherwise({ 
             templateUrl: 'views/404.html',
           });
-  })
+  }])
 
-  .controller('appCtrl', ['$scope', "$rootScope", "localStorage", "localization",
-    function($scope, $rootScope, localStorage, localization) {
+
+  .controller('appCtrl', ['$scope', "$rootScope", "localStorage", "localization", "$location",
+    function($scope, $rootScope, localStorage, localization, $location) {
 
     $scope.staticTranslate = [];
 
@@ -39,5 +53,4 @@ var app = angular.module("zachet", ['ngRoute', "localStorageModule", "localizati
     $rootScope.$on("chengeLang", function(e, data){
       $scope.loc = data.loc;
     })
-
 }])

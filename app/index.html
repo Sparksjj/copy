@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en-US" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <head>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +22,7 @@
         <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
     </head>
 
-    <body class="page home page-template-default" ng-app="zachet">
+    <body class="single-product" ng-app="zachet">
         <div id="page" class="hfeed site" ng-controller="appCtrl">
             <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -29,13 +30,16 @@
             <ng-include src="'views/template/topBar.html'"></ng-include>
             <ng-include src="'views/template/mainHeader.html'"></ng-include>
             <nav class="navbar navbar-primary navbar-full" ng-include src="'views/template/mainNavigation.html'"></nav>
-
-            <div ng-view></div>
-
+            <div id="content" class="site-content" tabindex="-1">
+                <div class="container">
+                    <div ng-view></div>
+                </div>
+            </div>
             <ng-include src="'views/template/mainFooter.html'"></ng-include>
 
         </div>
 
+        
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/tether.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -53,6 +57,9 @@
         <script src="../angular/localStorageModule/localStorageModule.js"></script>
         <!-- localization module -->             
         <script src="../angular/localizationModule/localizationModule.js"></script>
+        <!-- Products module -->             
+        <script src="../angular/productModule/productModule.js"></script>
+        <script src="../angular/productModule/productController.js"></script>
 
     </body>
 </html>
