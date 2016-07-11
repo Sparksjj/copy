@@ -10,8 +10,8 @@ var app = angular.module("zachet", ['ngRoute', "localStorageModule", "localizati
               templateUrl: 'views/home.html',
               controller: 'appCtrl',
           })
-          .when('/products', {
-              templateUrl: 'views/products.html',
+          .when('/category', {
+              templateUrl: 'views/category.html',
               controller: 'appCtrl',
           })
           .when('/product', {
